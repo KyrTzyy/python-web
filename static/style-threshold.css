@@ -1,0 +1,121 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f8f9fa;
+  padding: 20px;
+  max-width: 80%;
+  margin: auto;
+}
+
+h2,
+h3 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+input[type="submit"] {
+  padding: 8px 16px;
+  width: 30%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #59ff00;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+
+  display: block;
+  width: 20%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+img {
+  display: block;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image-grid div {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.image-grid img {
+  max-width: 100%;
+  height: auto;
+}
+
+.otsu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.otsu-wrapper img {
+  max-width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.threshold-grid {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.histogram-grid {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-tugas {
+  display: flex;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgb(236, 236, 94);
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 5px;
+  border-radius: 6px;
+  padding: 10px;
+  text-decoration: none;
+}

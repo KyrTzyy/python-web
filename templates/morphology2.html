@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Morphology Lanjut</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style-morphology.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Upload Gambar untuk Morphology Lanjutan</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" required />
+
+      <div>
+        <label for="method">Pilih Operasi Morphology:</label>
+        <select name="method" id="method" required>
+          <option value="skeleton">Skeletonization</option>
+          <option value="thinning">Thinning</option>
+          <option value="boundary">Boundary Extraction</option>
+          <option value="regionfill">Region Filling</option>
+          <option value="thickening">Thickening</option>
+          <option value="convexhull">Convex Hull</option>
+          <option value="pruning">Pruning</option>
+        </select>
+      </div>
+
+      <input type="submit" value="Proses" />
+    </form>
+
+    <form
+      method="POST"
+      action="{{ url_for('reset_morphology2') }}"
+      style="margin-top: 10px"
+    >
+      <button type="submit">Reset</button>
+    </form>
+
+    {% if output_exists %}
+    <h3>Hasil Morphology:</h3>
+    <img
+      src="{{ url_for('static', filename='output_morph2.jpg') }}"
+      alt="Output"
+    />
+    {% endif %}
+
+    <div class="list-tugas">
+      <a href="{{ url_for('threshold') }}">1. Thresholding</a>
+      <a href="{{ url_for('main') }}">2. Edge Detection</a>
+      <a href="{{ url_for('morphology') }}">3. Morphology</a>
+      <a href="{{ url_for('morphology2') }}">4. Morphology Lanjutan</a>
+    </div>
+  </body>
+</html>

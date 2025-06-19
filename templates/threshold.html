@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thresholding Citra</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style-threshold.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Upload Gambar untuk Thresholding</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" required />
+      <input type="submit" value="Proses" />
+    </form>
+
+    <form method="POST" action="{{ url_for('reset_threshold') }}">
+      <button type="submit">Reset</button>
+    </form>
+    {% if output_exists %}
+    <div class="image-grid">
+      <div>
+        <h4>Original</h4>
+        <img src="{{ url_for('static', filename='original.jpg') }}" />
+      </div>
+      <div>
+        <h4>Binary</h4>
+        <img src="{{ url_for('static', filename='binary.jpg') }}" />
+      </div>
+      <div>
+        <h4>Binary Inverted</h4>
+        <img src="{{ url_for('static', filename='binary_inv.jpg') }}" />
+      </div>
+      <div>
+        <h4>Trunc</h4>
+        <img src="{{ url_for('static', filename='trunc.jpg') }}" />
+      </div>
+      <div>
+        <h4>Tozero</h4>
+        <img src="{{ url_for('static', filename='tozero.jpg') }}" />
+      </div>
+      <div>
+        <h4>Tozero Inverted</h4>
+        <img src="{{ url_for('static', filename='tozero_inv.jpg') }}" />
+      </div>
+    </div>
+
+    <div class="otsu-wrapper">
+      <div class="threshold-grid">
+        <h3>Threshold Otsu</h3>
+        <img
+          src="{{ url_for('static', filename='otsu.jpg') }}"
+          style="display: block"
+        />
+      </div>
+      <div class="histogram-grid">
+        <h3>Histogram</h3>
+        <img src="{{ url_for('static', filename='histogram.png') }}" />
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="list-tugas">
+      <a href="{{ url_for('threshold') }}">1. Thresholding</a>
+      <a href="{{ url_for('main') }}">2. Edge Detection</a>
+      <a href="{{ url_for('morphology') }}">3. Morphology</a>
+      <a href="{{ url_for('morphology2') }}">4. Morphology Lanjutan</a>
+    </div>
+  </body>
+</html>
